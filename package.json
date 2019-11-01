@@ -1,0 +1,21 @@
+{
+  "name": "ports-and-adapters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jokes-rest": "node src/adapters/JokesRestApi/index.js",
+    "jokes-cli": "node src/adapters/JokesCLI/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "DependencyContainer": "./src/utils/DependencyContainer/",
+    "JokesPlugin": "./src/plugins/Jokes/",
+    "RestApiDriver": "./src/drivers/RestApi",
+    "axios": "^0.19.0",
+    "express": "^4.17.1"
+  }
+}
