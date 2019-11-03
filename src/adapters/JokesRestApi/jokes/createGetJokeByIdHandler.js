@@ -15,8 +15,6 @@ function createGetJokeByIdHandler(plugin) {
       data: (joke) => ({ content: joke.content })
     },
     errorMapper: (error) => {
-      console.log('errorMapper', error)
-
       if (error instanceof JokeNotFound) {
         return {
           status: STATUS.NotFound,
