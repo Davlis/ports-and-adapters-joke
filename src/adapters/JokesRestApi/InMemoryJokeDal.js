@@ -1,21 +1,19 @@
-const DataSourceLength = 3
+const BaseDataSourceLength = 3
 
-const random = (min, max) => Math.floor(min + (Math.random() * (max + 1)))
+const random = (min, max) => Math.floor(min + (Math.random() * (max)))
 
 class JokeDal {
   constructor() {
-    console.log('Joke DAL executed')
-    this.jokes = new Array(DataSourceLength).fill(0).map((_, idx) => `Joke #${idx + 1}`)
+    this.jokes = new Array(BaseDataSourceLength).fill(0).map((_, idx) => ({
+      id: idx + 1,
+      content: `Joke #${idx + 1}`
+    })) 
   }
 
   async get(id) {
-    console.log("id", id)
-
     if (typeof id === "undefined") {
       const dataLength = this.jokes.length
       const rndIndx = random(0, dataLength)
-
-      console.log("hello")
 
       return this.jokes[rndIndx]
     }

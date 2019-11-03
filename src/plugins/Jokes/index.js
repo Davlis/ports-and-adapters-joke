@@ -1,3 +1,5 @@
+const { JokeNotFound } = require('./errors')
+
 class JokeService {
   constructor({ JokeDAL }) {
     this.JokeDAL = JokeDAL
@@ -20,6 +22,10 @@ class JokeService {
       result = await this.JokeDAL.get(identifier)
     } catch (error) {
       throw error
+    }
+
+    if (typeof result === "undefined") {
+      throw new JokeNotFound(`Joke for id=${identifier} was not found`)
     }
 
     return result

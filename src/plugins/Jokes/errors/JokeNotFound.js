@@ -3,3 +3,5 @@ class JokeNotFound extends Error {
     super(message)
   }
 }
+
+module.exports = JokeNotFound

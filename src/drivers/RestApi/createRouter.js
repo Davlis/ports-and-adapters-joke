@@ -1,8 +1,8 @@
 const { Router } = require('express')
 const prepareRoutesFromConfig = require('./prepareRoutesFromConfig')
 
-function createRouter(handlers, serializers) {
-  const createRoutesFromConfiguration = prepareRoutesFromConfig(handlers, serializers)
+function createRouter(handlers) {
+  const createRoutesFromConfiguration = prepareRoutesFromConfig(handlers)
 
   const router = createRoutesFromConfiguration(Router({ mergeParams: true }))
 
